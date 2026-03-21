@@ -1,5 +1,20 @@
 
 public class Main {
+
+    static int divisible(int number){
+        int evenCounter = 0;
+        int num_remainder = number;
+        while(num_remainder > 0){
+            int digit = num_remainder %10;
+            if(digit !=0 && number % digit == 0){
+                evenCounter = evenCounter+1;
+            }
+            num_remainder /= 10;
+        }
+
+        return evenCounter;
+
+    }
     public static void main(String[] args) {
 
 
@@ -7,8 +22,14 @@ public class Main {
 
 
 
+        //1. count substring
+        //2. good or bad string
+        //3 kitchen time table
+        //name reduction
+        //alternating string
 
 
+        //q3)
 
 
 
