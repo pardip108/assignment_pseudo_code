@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import static java.awt.AWTEventMulticaster.add;
+
 public class Main {
 
     static int divisible(int number){
@@ -16,13 +18,347 @@ public class Main {
         return evenCounter;
 
     }
+
+
+
+
+
+    //q52) reverse a number
+    void reverse(int n){
+        int temp = 0;
+        while(n > 0){
+            int d = n % 10;
+            temp = temp*10 + d;
+            n /=10;
+        }
+        System.out.println("after reversing  = "+ temp);
+    }
+
+
+
+    //q51) sum of this series -> 1/1 + 1/2 + 1/3 .... 1/n;
+    double sumOfSeries1(int n){
+        double s= 0;
+        for(int i=1; i<=n; i++){
+            s += 1/i;
+        }
+        return s;
+    }
+
+
+    //50) sum of the series , 1 2 3 ... n;
+    int sumOfSeries(int n){
+        int s = 0;
+        for(int i=1; i<=n; i++){
+            s += i;
+        }
+        return s;
+    }
+
+
+    //q49)
+    int funn(int a, int b, int c){
+        for( c=4; c<=8; c++){
+            a = (a+11)+b;
+            a = (c+3)+b;
+        }
+        b = (5+10)+a;
+        a = (10+8)+a;
+        for( c=2; c<=5; c++){
+            a = (10+2)&a;
+            b = (3+4) + a;
+        }
+        return a+b;
+    }
+
+
+    //q48) factorial
+    int factorial(int n){
+        int fact = 1;
+        for(int i=1; i<=n; i++){
+            fact = fact *i;
+        }
+        return fact;
+    }
+
+
+
+    //q47) abs
+    int abs(int num){
+        if(num < 0)
+            num = num*-1;
+        return num;
+    }
+
+
+    // q46) add two number
+    static int add(int a , int b){
+        return a+b;
+    }
+
+    //47) area of rectangle
+    int aor(int l, int b){
+        return  2*(l+b);
+    }
+
+    //q48) area of circle
+    double aoc(double r){
+        return 3.14*r*r;
+    }
+
+
+
+
+
+
     public static void main(String[] args) {
 
-            //  *** control statements  starts***
+                // *** function  start***
+
+        //q46) syntax
+                System.out.println(add(5, 6));
+
+
+                // *** function  end***
+
+
+        //q45)
+//        int c = 12, b= 4;
+//        int a = c/b;
+//        c = b>>a;
+//        System.out.println(c); // 0
+
+
+        //q44)
+//        int x = 4, y = 8;
+//        do{
+//            System.out.println(x);  // 4 13
+//            x = x+y+1;
+//        }
+//        while(x < 15);
+
+
+        //q43)
+//        int n =1, value = 32;
+//        while( value >= n){
+//            value = value >> 1;
+//        }
+//        System.out.println(value); // 0
+
+
+        //q42)
+//        int b=0, c=0;
+//        for(int a=1; a<=5; a++){
+//            System.out.println(c); // 0 1 3 6 10
+//            b = b+1;
+//            c = c+b;
+//        }
+
+        //q41)
+//        int b = 4;
+//        int c = 5;
+//        int a = 0;
+//        for(a=2; a<=4; a++){
+//            System.out.println(c);  //5 8 10
+//            b = b-1;
+//            c = c+b;
+//        }
+
+
+        //q40)
+//        int a=7, b=6, c=5;
+//        b = a+b;
+//        if((b+c)<(c-b) && 2<a)
+//            c = 11+a;
+//        c= (b+a)+a;
+//        if((a&9) < b)
+//            b = (a&a)+c;
+//        System.out.println("a+b+c = "+ (a+b+c)); // 68
+
+
+        //q39)
+//        int p=4, q=2, r=8;
+//        for(r=5; r<=6; r++){
+//            p = (r+r)^r;
+//            q = (8+3)+p;
+//        }
+//        for(r=5; r<=8; r++){
+//            p = 4+r;
+//            p = 1+q;
+//        }
+//        System.out.println("p+q = "+ (p+q)); //43
+
+
+        //q38)
+//        int p=5, q=2,r=5;
+//        for(r=5; r<=6; r++){
+//            p = (r+7)+r;
+//            if((r+q)> (q-r)){
+//                q = (p+r)+q;
+//                continue;
+//            }
+//        }
+//        System.out.println("p+q = "+ (p+q)); //68
+
+
+
+        // q36)
+//        int a =1, b=5, c=7;
+//        if((c+b)<(a+c)){
+//            b = a+b;
+//        }
+//        else{
+//            if((c+9+b)< (6+c))
+//                c = (3+8)+c;
+//        }
+//        System.out.println("a+b+c = "+ (a+b+c));
+
+
+        //q35)
+//        int p = 1;
+//        int q = 5;
+//        int r = 7;
+//        if((3+p) < (q+3)){
+//            if((r+q+8) < (q+p+r))
+//                r = (3 + 30)+r;
+//            r = (q+1)+q;
+//        }
+//        else{
+//            if((r+q)<(p+r))
+//                q = 12+q;
+//            else
+//                r = q+p;
+//            r = (p+q)+r;
+//        }
+//        r = r+r;
+//        System.out.println("p+q+r = "+ (p+q+r));//28
+
+
+        //  *** control statements  starts***
+
+        //q34) sum of digit of a number
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int sum = 0;
+//        while(n > 0){
+//            int d = n % 10;
+//            n /= 10;
+//            sum += d;
+//        }
+//        System.out.println("sum 0f digit = "+ sum);
+
+        //q33)  how many digit occur in a number
+
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int digit = sc.nextInt();
+//        int count = 0;
+//        while(n > 0){
+//            int d = n % 10;
+//            n /= 10;
+//            if( d == digit){
+//                count++;
+//            }
+//        }
+//        System.out.println("count = " + count);
+
+
+        //q32) find a digit into a number
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int digit = sc.nextInt();
+//        boolean found = false;
+//        while(n > 0){
+//            int d = n % 10;
+//            n /= 10;
+//            if( d == digit){
+//                found = true;
+//                break;
+//            }
+//        }
+//        if(found)
+//            System.out.println("True digit found");
+//        else
+//            System.out.println("digit not found");
+
+        //q31) fibonacci series
+
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int prev = 0;
+//        int next = 1;
+//        int sum = 0;
+//        System.out.println(prev);
+//        System.out.println(next);
+//        int i=1;
+//        while(i++ <= n-2){
+//            sum = prev + next;
+//            System.out.println(sum);
+//            prev = next;
+//            next = sum;
+//
+//        }
+
+
+
+        //q30) prime check
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        for(int i=2; i<n; i++){
+//            if(n % i == 0){
+//                System.out.println("not a prime");
+//                break;
+//            }
+//        }
+//        System.out.println("prime ");
+
+
+        //q29) print all odd
+//        for(int i=0; i<10; i++){
+//            if(i % 2 == 0 )
+//                continue;
+//            System.out.println(i);
+//        }
+
+
+
+        //q28) use of continue
+
+//        for(int i=0; i<10; i++){
+//            if(i == 3)
+//                continue;  //skip all statements below it
+//            System.out.println(i);
+//        }
+
+        //q27) use of break;
+//        for(int i=0; i<10; i++){
+//            if( i == 5)
+//                break;
+//            System.out.println(i);
+//        }
+
+
+
+
+        //q26) palindrome check of a number
+//        Scanner sc = new Scanner(System.in);
+//        int num = sc.nextInt();
+//        int n = num;
+//        int b = 0;
+//        while(n > 0){
+//            int d = n % 10;
+//            b = b*10 + d;
+//            n /= 10;
+//        }
+//
+//        if(b == num)
+//            System.out.println("palindrome");
+//        else
+//            System.out.println("not a palindrome");
+
 
         //q25) armstrong number
         //153 = 1 5 3,  sum of cube of all digit
-
 //        Scanner sc = new Scanner(System.in);
 //        int num  = sc.nextInt();
 //        int n = num;
